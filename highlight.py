@@ -12,10 +12,14 @@ with open('poem.txt', 'r') as infile:
     for line in infile:
         words = line.split()
         if len(words) == 0:
+            # blank line means paragraph break
             outtext.append('</p>\n\n<p>')
             continue
+
         newstring = []
         for word in words:
+            # This is where you can customize how you display
+            # various text based on certain conditions
             if len(word) <= 5:
                 newstring.append(word)
             else:
